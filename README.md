@@ -1,7 +1,7 @@
 # teach-portal
 
 # prerequisites
-<li>python3.8+</li>
+* python3.8+
 
 # install
 ```shell
@@ -29,9 +29,15 @@ python fill_db.py
 ```
 
 ```shell
+# create a superuser
+python manage.py createsuperuser
+```
+
+```shell
 # run server in the development mode
 python manage.py runserver
 ```
 
-# Main page
-[Teach portal](http://127.0.0.1:8000)
+# Pages
+* [Teach portal](http://127.0.0.1:8000)
+* [Admin page](http://127.0.0.1:8000/admin)
