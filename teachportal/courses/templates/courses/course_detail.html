@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ course.name }}</title>
+{% endblock %}
+
+{% block body %}
+    <h1>{{ course.name }}</h1>
+    <p>{{ course.description }}</p>
+    <div>
+        <a href="{% url 'course_update' course.id %}" style="font-weight: bold">Edit</a>
+        <a href="{% url 'course_delete' course.id %}" style="font-weight: bold">Delete</a>
+    </div>
+{% endblock %}

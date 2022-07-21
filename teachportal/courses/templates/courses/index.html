@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teach portal</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Main</title>
+{% endblock %}
+
+{% block body %}
 <body>
 "Hello Student!"
 <ul>
-    <h2>Courses</h2>
-    {% for el in courses %}
-        <li>{{ el }} | Description: {{ el.description }}</li>
-    {% endfor %}
+    <h2><a href="{% url 'courses' %}">Courses</a></h2>
 
     <h2>Groups</h2>
     {% for el in groups %}
@@ -33,4 +31,4 @@
     {% endfor %}
 </ul>
 </body>
-</html>
+{% endblock %}

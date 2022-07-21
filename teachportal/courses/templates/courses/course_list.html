@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Courses</title>
+{% endblock %}
+
+{% block body %}
+<body>
+<h1>Courses</h1>
+{% for el in course_list %}
+    <ul>
+        <li><a href="{% url 'course_detail' el.pk %}">{{ el }}</a></li>
+    </ul>
+{% endfor %}
+<div>
+    <a href="{% url 'course_create' %}" style="font-weight: bold">Create new course</a>
+</div>
+</body>
+{% endblock %}
