@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teach portal</title>
+</head>
+<body>
+"Hello Student!"
+<ul>
+    <h2>Courses</h2>
+    {% for el in courses %}
+        <li>{{ el }} | Description: {{ el.description }}</li>
+    {% endfor %}
+
+    <h2>Groups</h2>
+    {% for el in groups %}
+        <li>{{ el }}</li>
+    {% endfor %}
+
+    <h2>Teachers</h2>
+    {% for el in teachers %}
+        <li>{{ el }}</li>
+    {% endfor %}
+
+    <h2>Students</h2>
+    {% for el in students %}
+        <li>{{ el }}</li>
+    {% endfor %}
+
+    <h2>Schedules</h2>
+    {% for el in schedules %}
+        <li>{{ el.group }} | Theme: {{ el.theme }} | Date: {{ el.lesson_datetime }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
