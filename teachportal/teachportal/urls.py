@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from courses import views
-from courses.views import CourseListView, CourseDetailView, CourseCreateView, CourseUpdateView, CourseDeleteView
+from courses.views import CourseListView, CourseDetailView, CourseCreateView, CourseUpdateView, CourseDeleteView, \
+    ScheduleListView, ScheduleDetailView
+from teachportal.settings import DEBUG
 
 urlpatterns = [
     path('', views.index, name='main'),
@@ -26,5 +28,10 @@ urlpatterns = [
     path('course/update/<int:pk>', CourseUpdateView.as_view(), name='course_update'),
     path('course/delete/<int:pk>', CourseDeleteView.as_view(), name='course_delete'),
     path('courses/', CourseListView.as_view(), name='courses'),
+    path('schedule/<int:pk>/', ScheduleDetailView.as_view(), name='schedule_detail'),
+    path('schedules/', ScheduleListView.as_view(), name='schedules'),
     path('admin/', admin.site.urls),
 ]
+
+if DEBUG:
+    urlpatterns.append(path('__debug__/', include('debug_toolbar.urls')))

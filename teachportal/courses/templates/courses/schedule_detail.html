@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Schedule: {{ schedule.id }}</title>
+{% endblock %}
+
+{% block body %}
+    <body>
+        <h1>Date: {{ schedule.lesson_datetime }}</h1>
+        <p>Theme: {{ schedule.theme }}</p>
+        <p>{{ schedule.group }}</p>
+        <p>{{ schedule.teacher }}</p>
+    </body>
+{% endblock %}

@@ -45,3 +45,6 @@ class Schedule(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     lesson_datetime = models.DateTimeField(verbose_name='lesson datetime')
     theme = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.__class__.__name__} ({self.group}) ({self.teacher})'
