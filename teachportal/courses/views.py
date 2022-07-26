@@ -57,3 +57,11 @@ class CourseUpdateView(UpdateView):
 class CourseDeleteView(DeleteView):
     model = Course
     success_url = reverse_lazy('courses')
+
+
+class ScheduleListView(ListView):
+    model = Schedule
+
+
+class ScheduleDetailView(DetailView):
+    model = Schedule

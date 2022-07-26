@@ -9,6 +9,7 @@
 "Hello Student!"
 <ul>
     <h2><a href="{% url 'courses' %}">Courses</a></h2>
+    <h2><a href="{% url 'schedules' %}">Schedules</a></h2>
 
     <h2>Groups</h2>
     {% for el in groups %}
@@ -23,11 +24,6 @@
     <h2>Students</h2>
     {% for el in students %}
         <li>{{ el }}</li>
-    {% endfor %}
-
-    <h2>Schedules</h2>
-    {% for el in schedules %}
-        <li>{{ el.group }} | Theme: {{ el.theme }} | Date: {{ el.lesson_datetime }}</li>
     {% endfor %}
 </ul>
 </body>
