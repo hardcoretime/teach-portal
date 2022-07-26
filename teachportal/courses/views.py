@@ -62,6 +62,9 @@ class CourseDeleteView(DeleteView):
 class ScheduleListView(ListView):
     model = Schedule
 
+    def get_queryset(self):
+        return super().get_queryset().select_related('group', 'teacher')
+
 
 class ScheduleDetailView(DetailView):
     model = Schedule
